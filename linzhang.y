@@ -33,15 +33,19 @@ void endScope()
     printf("\n___Exiting scope...\n\n");
 }
 
-void beginScope( )
+bool findEntryInAnyScope(const string theName)
 {
-	scopeStack.push(SYMBOL_TABLE( ));
-	printf("\n___Entering new scope...\n\n");
-}
-void endScope( )
-{
-	scopeStack.pop( );
-	printf("\n___Exiting scope...\n\n");
+	if (scopeStack.empty( )) return(false);
+	bool found = scopeStack.top( ).findEntry(theName);
+	if (found)
+		return(true);
+	else { // check in "next higher" scope
+		SYMBOL_TABLE symbolTable = scopeStack.top( );
+		scopeStack.pop( );
+		found = findEntryInAnyScope(theName);
+		scopeStack.push(symbolTable); // restore the stack
+		return(found);
+ }
 }
 
 int yyerror(const char *s) 
