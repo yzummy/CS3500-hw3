@@ -33,6 +33,21 @@ void endScope()
     printf("\n___Exiting scope...\n\n");
 }
 
+bool findEntryInAnyScope(const string theName)
+{
+	if (scopeStack.empty( )) return(false);
+	bool found = scopeStack.top( ).findEntry(theName);
+	if (found)
+		return(true);
+	else { // check in "next higher" scope
+		SYMBOL_TABLE symbolTable = scopeStack.top( );
+		scopeStack.pop( );
+		found = findEntryInAnyScope(theName);
+		scopeStack.push(symbolTable); // restore the stack
+		return(found);
+ }
+}
+
 int yyerror(const char *s) 
 {
     printf("Line %d: %s\n", line_num, s);
