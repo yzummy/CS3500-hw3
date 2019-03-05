@@ -48,6 +48,10 @@ extern "C"
 
 %}
 
+%union
+{
+  char* text;
+};
 %token T_IDENT T_INTCONST T_FLOATCONST T_UNKNOWN T_STRCONST 
 %token T_IF T_ELSE
 %token T_WHILE T_FUNCTION T_FOR T_IN T_NEXT T_BREAK 
@@ -220,6 +224,7 @@ N_FACTOR		: N_VAR
 
 N_COMPOUND_EXPR : T_LBRACE N_EXPR N_EXPR_LIST T_RBRACE
                 {
+                    endScope();
                     printRule("COMPOUND_EXPR",
                               "{ EXPR EXPR_LIST }");
                 }
@@ -352,6 +357,7 @@ N_INPUT_EXPR    : T_READ T_LPAREN N_VAR T_RPAREN
 N_FUNCTION_DEF  : T_FUNCTION T_LPAREN N_PARAM_LIST T_RPAREN 
                   N_COMPOUND_EXPR
                 {
+                    beginScope();
                     printRule("FUNCTION_DEF",
                               "FUNCTION ( PARAM_LIST )"
                               " COMPOUND_EXPR");
