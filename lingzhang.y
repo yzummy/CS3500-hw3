@@ -245,7 +245,6 @@ N_FACTOR		: N_VAR
 
 N_COMPOUND_EXPR : T_LBRACE N_EXPR N_EXPR_LIST T_RBRACE
                 {
-                    endScope();
                     printRule("COMPOUND_EXPR",
                               "{ EXPR EXPR_LIST }");
                 }
@@ -280,14 +279,14 @@ N_WHILE_EXPR    : T_WHILE T_LPAREN N_EXPR T_RPAREN N_LOOP_EXPR
                 }
                 ;
 
-N_FOR_EXPR      : T_FOR T_LPAREN T_IDENT T_IN N_EXPR T_RPAREN N_LOOP_EXPR
+N_FOR_EXPR      : T_FOR T_LPAREN T_IDENT 
                 {
-                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($3),0));
-                    cout << "___Adding " << string($3) << " to symbol table\n";
-                    printRule("FOR_EXPR", 
-                              "FOR ( IDENT IN EXPR ) "
-                              "LOOP_EXPR");
-                }
+                    printRule("FOR_EXPR", "FOR ( IDENT IN EXPR ) LOOP_EXPR");
+
+                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($3),0)))
+                        cout << "___Adding " << string($3) << " to symbol table\n";
+
+                } T_IN N_EXPR T_RPAREN N_LOOP_EXPR
                 ;
 
 N_LOOP_EXPR     : N_EXPR
@@ -336,11 +335,11 @@ N_CONST_LIST    : N_CONST T_COMMA N_CONST_LIST
 
 N_ASSIGNMENT_EXPR : T_IDENT N_INDEX 
                 {
-                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0));
-                    cout << "___Adding " << string($1) << " to symbol table\n";
-                    printRule("ASSIGNMENT_EXPR", 
-                              "IDENT INDEX ASSIGN EXPR");
-                } T_ASSIGN N_EXPR
+                    printRule("ASSIGNMENT_EXPR", "IDENT INDEX ASSIGN EXPR");
+                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
+                        cout << "___Adding " << string($1) << " to symbol table\n";
+                    
+                } T_ASSIGN N_EXPR 
                 ;
 
 N_INDEX :       T_LBRACKET T_LBRACKET N_EXPR T_RBRACKET T_RBRACKET
@@ -377,13 +376,15 @@ N_INPUT_EXPR    : T_READ T_LPAREN N_VAR T_RPAREN
                 }
                 ;
 
-N_FUNCTION_DEF  : T_FUNCTION T_LPAREN N_PARAM_LIST T_RPAREN 
-                  N_COMPOUND_EXPR
+N_FUNCTION_DEF  : T_FUNCTION 
                 {
                     beginScope();
+                } T_LPAREN N_PARAM_LIST T_RPAREN N_COMPOUND_EXPR
+                {
+                    endScope();
                     printRule("FUNCTION_DEF",
-                              "FUNCTION ( PARAM_LIST )"
-                              " COMPOUND_EXPR");
+                    "FUNCTION ( PARAM_LIST )"
+                    " COMPOUND_EXPR");
                 }
                 ;
 
@@ -405,20 +406,35 @@ N_NO_PARAMS     : /* epsilon */
 
 N_PARAMS        : T_IDENT
                 {
-                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0));
-                    cout << "___Adding " << string($1) << " to symbol table\n";
                     printRule("PARAMS", "IDENT");
+                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
+                        cout << "___Adding " << string($1) << " to symbol table\n";
+                    else
+                    {
+                        printf("Line %d: Multiply Defined Identifier", line_num);
+                        exit(1);
+                    }
                 }
                 | T_IDENT T_COMMA N_PARAMS
                 {
-                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0));
-                    cout << "___Adding " << string($1) << " to symbol table\n";
                     printRule("PARAMS", "IDENT, PARAMS");
+
+                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
+                        cout << "___Adding " << string($1) << " to symbol table\n";
+                    else
+                    {
+                        printf("Line %d: Multiply Defined Identifier", line_num);
+                        exit(1);
+                    }
                 }
                 ;
 
 N_FUNCTION_CALL : T_IDENT T_LPAREN N_ARG_LIST T_RPAREN
                 {
+                    if(findEntryInAnyScope(string($1))){
+                        printf("Line %d: Undefined identifier", line_num);
+                        exit(1);
+                    }
                     printRule("FUNCTION_CALL", "IDENT"
                               " ( ARG_LIST )");
                 }
@@ -525,14 +541,24 @@ N_VAR           : N_ENTIRE_VAR
 N_SINGLE_ELEMENT : T_IDENT T_LBRACKET T_LBRACKET N_EXPR
                    T_RBRACKET T_RBRACKET
                 {
-                    printRule("SINGLE_ELEMENT", "IDENT"
+                printRule("SINGLE_ELEMENT", "IDENT"
                               " [[ EXPR ]]");
+                if(!findEntryInAnyScope(string($1))){
+                        printf("Line %d: Undefined identifier", line_num);
+                        exit(1);
+                    }
+
                 }
                 ;
 
 N_ENTIRE_VAR    : T_IDENT
                 {
                     printRule("ENTIRE_VAR", "IDENT");
+                    if(!findEntryInAnyScope(string($1))){
+                        printf("Line %d: Undefined identifier", line_num);
+                        exit(1);
+                    }                    
+                    
                 }
                 ;
 
