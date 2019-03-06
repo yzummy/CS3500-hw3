@@ -1,6 +1,7 @@
-/* minir.l
-    
-    flex minir.l 
+/* 
+    Name: Sungki Ling, Yunchao Zhang
+    Date: 03/06/2019
+    Assignment: hw3
 */
 
 %{

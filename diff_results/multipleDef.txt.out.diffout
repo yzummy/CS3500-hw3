@@ -1,0 +1,26 @@
+
+___Entering new scope...					___Entering new scope...
+
+TOKEN: IDENT 		 LEXEME: banana				TOKEN: IDENT 		 LEXEME: banana
+TOKEN: ASSIGN 		 LEXEME: =				TOKEN: ASSIGN 		 LEXEME: =
+INDEX ->  epsilon						INDEX ->  epsilon
+ASSIGNMENT_EXPR -> IDENT INDEX ASSIGN EXPR			ASSIGNMENT_EXPR -> IDENT INDEX ASSIGN EXPR
+___Adding banana to symbol table				___Adding banana to symbol table
+TOKEN: FUNCTION 		 LEXEME: function		TOKEN: FUNCTION 		 LEXEME: function
+
+___Entering new scope...					___Entering new scope...
+
+TOKEN: LPAREN 		 LEXEME: (				TOKEN: LPAREN 		 LEXEME: (
+TOKEN: IDENT 		 LEXEME: x				TOKEN: IDENT 		 LEXEME: x
+TOKEN: COMMA 		 LEXEME: ,				TOKEN: COMMA 		 LEXEME: ,
+TOKEN: IDENT 		 LEXEME: y				TOKEN: IDENT 		 LEXEME: y
+TOKEN: COMMA 		 LEXEME: ,				TOKEN: COMMA 		 LEXEME: ,
+TOKEN: IDENT 		 LEXEME: x				TOKEN: IDENT 		 LEXEME: x
+TOKEN: RPAREN 		 LEXEME: )				TOKEN: RPAREN 		 LEXEME: )
+PARAMS -> IDENT							PARAMS -> IDENT
+___Adding x to symbol table					___Adding x to symbol table
+PARAMS -> IDENT, PARAMS						PARAMS -> IDENT, PARAMS
+___Adding y to symbol table					___Adding y to symbol table
+PARAMS -> IDENT, PARAMS						PARAMS -> IDENT, PARAMS
+___Adding x to symbol table					___Adding x to symbol table
+Line 1: Multiply defined identifier				Line 1: Multiply defined identifier

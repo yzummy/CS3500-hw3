@@ -530,15 +530,15 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    98,    98,   105,   109,   113,   117,   121,   125,   129,
-     133,   137,   141,   145,   149,   156,   160,   164,   168,   172,
-     178,   183,   192,   199,   205,   210,   217,   223,   228,   232,
-     236,   240,   246,   253,   258,   263,   267,   274,   283,   282,
-     292,   296,   300,   306,   312,   318,   325,   330,   337,   336,
-     345,   350,   354,   361,   366,   373,   380,   379,   391,   395,
-     402,   407,   418,   432,   443,   447,   454,   459,   463,   469,
-     473,   477,   483,   487,   491,   495,   499,   505,   509,   513,
-     517,   521,   525,   531,   535,   541,   554
+       0,    98,    98,   106,   110,   114,   118,   122,   126,   130,
+     134,   138,   142,   146,   150,   157,   161,   165,   169,   173,
+     179,   184,   193,   200,   206,   211,   218,   224,   229,   233,
+     237,   241,   247,   254,   259,   264,   268,   275,   284,   283,
+     293,   297,   301,   307,   313,   319,   326,   331,   338,   337,
+     346,   351,   355,   362,   367,   374,   381,   380,   393,   397,
+     404,   409,   419,   431,   442,   446,   453,   458,   462,   468,
+     472,   476,   482,   486,   490,   494,   498,   504,   508,   512,
+     516,   520,   524,   530,   534,   540,   553
 };
 #endif
 
@@ -1419,305 +1419,306 @@ yyreduce:
 #line 99 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("START", "EXPR");
+                    endScope();
                     printf("\n---- Completed parsing ----\n\n");
                     return 0;
                 }
-#line 1426 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1427 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 106 "lingzhang.y" /* yacc.c:1646  */
+#line 107 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "IF_EXPR");
                 }
-#line 1434 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1435 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 110 "lingzhang.y" /* yacc.c:1646  */
+#line 111 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "WHILE_EXPR");
                 }
-#line 1442 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1443 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 114 "lingzhang.y" /* yacc.c:1646  */
+#line 115 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "FOR_EXPR");
                 }
-#line 1450 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1451 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 118 "lingzhang.y" /* yacc.c:1646  */
+#line 119 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "COMPOUND_EXPR");
                 }
-#line 1458 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1459 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 122 "lingzhang.y" /* yacc.c:1646  */
+#line 123 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "ARITHLOGIC_EXPR");
                 }
-#line 1466 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1467 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 126 "lingzhang.y" /* yacc.c:1646  */
+#line 127 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "ASSIGNMENT_EXPR");
                 }
-#line 1474 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1475 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 130 "lingzhang.y" /* yacc.c:1646  */
+#line 131 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "OUTPUT_EXPR");
                 }
-#line 1482 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1483 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 134 "lingzhang.y" /* yacc.c:1646  */
+#line 135 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "INPUT_EXPR");
                 }
-#line 1490 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1491 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 138 "lingzhang.y" /* yacc.c:1646  */
+#line 139 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "LIST_EXPR");
                 }
-#line 1498 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1499 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 142 "lingzhang.y" /* yacc.c:1646  */
+#line 143 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "FUNCTION_DEF");
                 }
-#line 1506 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1507 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 146 "lingzhang.y" /* yacc.c:1646  */
+#line 147 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "FUNCTION_CALL");
                 }
-#line 1514 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1515 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 150 "lingzhang.y" /* yacc.c:1646  */
+#line 151 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR", "QUIT_EXPR");
                     exit(1);
                 }
-#line 1523 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1524 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 157 "lingzhang.y" /* yacc.c:1646  */
+#line 158 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST", "INTCONST");
                 }
-#line 1531 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1532 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 161 "lingzhang.y" /* yacc.c:1646  */
+#line 162 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST", "STRCONST");
                 }
-#line 1539 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1540 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 165 "lingzhang.y" /* yacc.c:1646  */
+#line 166 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST", "FLOATCONST");
                 }
-#line 1547 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1548 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 169 "lingzhang.y" /* yacc.c:1646  */
+#line 170 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST", "TRUE");
                 }
-#line 1555 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1556 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 173 "lingzhang.y" /* yacc.c:1646  */
+#line 174 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST", "FALSE");
                 }
-#line 1563 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1564 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 179 "lingzhang.y" /* yacc.c:1646  */
+#line 180 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ARITHLOGIC_EXPR", 
                               "SIMPLE_ARITHLOGIC");
                 }
-#line 1572 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1573 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 185 "lingzhang.y" /* yacc.c:1646  */
+#line 186 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ARITHLOGIC_EXPR", 
                               "SIMPLE_ARITHLOGIC REL_OP "
                               "SIMPLE_ARITHLOGIC");
                 }
-#line 1582 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1583 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 193 "lingzhang.y" /* yacc.c:1646  */
+#line 194 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("SIMPLE_ARITHLOGIC", 
                               "TERM ADD_OP_LIST");
                 }
-#line 1591 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1592 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 200 "lingzhang.y" /* yacc.c:1646  */
+#line 201 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ADD_OP_LIST", 
                               "ADD_OP TERM ADD_OP_LIST");
                 }
-#line 1600 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1601 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 205 "lingzhang.y" /* yacc.c:1646  */
+#line 206 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ADD_OP_LIST", "epsilon");
                 }
-#line 1608 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1609 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 211 "lingzhang.y" /* yacc.c:1646  */
+#line 212 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("TERM", 
                               "FACTOR MULT_OP_LIST");
                 }
-#line 1617 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1618 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 218 "lingzhang.y" /* yacc.c:1646  */
+#line 219 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP_LIST", 
                               "MULT_OP FACTOR MULT_OP_LIST");
                 }
-#line 1626 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1627 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 223 "lingzhang.y" /* yacc.c:1646  */
+#line 224 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP_LIST", "epsilon");
                 }
-#line 1634 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1635 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 229 "lingzhang.y" /* yacc.c:1646  */
+#line 230 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("FACTOR", "VAR");
                 }
-#line 1642 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1643 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 233 "lingzhang.y" /* yacc.c:1646  */
+#line 234 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("FACTOR", "CONST");
                 }
-#line 1650 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1651 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 237 "lingzhang.y" /* yacc.c:1646  */
+#line 238 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("FACTOR", "( EXPR )");
                 }
-#line 1658 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1659 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 241 "lingzhang.y" /* yacc.c:1646  */
+#line 242 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("FACTOR", "! FACTOR");
                 }
-#line 1666 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1667 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 247 "lingzhang.y" /* yacc.c:1646  */
+#line 248 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("COMPOUND_EXPR",
                               "{ EXPR EXPR_LIST }");
                 }
-#line 1675 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1676 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 254 "lingzhang.y" /* yacc.c:1646  */
+#line 255 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR_LIST", "; EXPR EXPR_LIST");
                 }
-#line 1683 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1684 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 258 "lingzhang.y" /* yacc.c:1646  */
+#line 259 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("EXPR_LIST", "epsilon");
                 }
-#line 1691 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1692 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 264 "lingzhang.y" /* yacc.c:1646  */
+#line 265 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("IF_EXPR", "IF ( EXPR ) EXPR");
                 }
-#line 1699 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1700 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 269 "lingzhang.y" /* yacc.c:1646  */
+#line 270 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("IF_EXPR", "IF ( EXPR ) EXPR ELSE EXPR");
                 }
-#line 1707 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1708 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 275 "lingzhang.y" /* yacc.c:1646  */
+#line 276 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("WHILE_EXPR", 
                               "WHILE ( EXPR ) "
                               "LOOP_EXPR");
                 }
-#line 1717 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1718 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 283 "lingzhang.y" /* yacc.c:1646  */
+#line 284 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("FOR_EXPR", "FOR ( IDENT IN EXPR ) LOOP_EXPR");
 
@@ -1725,394 +1726,392 @@ yyreduce:
                         cout << "___Adding " << string((yyvsp[0].text)) << " to symbol table\n";
 
                 }
-#line 1729 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1730 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 293 "lingzhang.y" /* yacc.c:1646  */
+#line 294 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("LOOP_EXPR", "EXPR");
                 }
-#line 1737 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1738 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 297 "lingzhang.y" /* yacc.c:1646  */
+#line 298 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("LOOP_EXPR", "BREAK_EXPR");
                 }
-#line 1745 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1746 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 301 "lingzhang.y" /* yacc.c:1646  */
+#line 302 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("LOOP_EXPR", "NEXT_EXPR");
                 }
-#line 1753 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1754 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 307 "lingzhang.y" /* yacc.c:1646  */
+#line 308 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("BREAK_EXPR", "BREAK");
                 }
-#line 1761 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1762 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 313 "lingzhang.y" /* yacc.c:1646  */
+#line 314 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("NEXT_EXPR", "NEXT");
                 }
-#line 1769 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1770 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 319 "lingzhang.y" /* yacc.c:1646  */
+#line 320 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("LIST_EXPR", 
                               "LIST ( CONST_LIST )");
                 }
-#line 1778 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1779 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 326 "lingzhang.y" /* yacc.c:1646  */
+#line 327 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST_LIST", 
                               "CONST, CONST_LIST");
                 }
-#line 1787 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1788 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 331 "lingzhang.y" /* yacc.c:1646  */
+#line 332 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("CONST_LIST", "CONST");
                 }
-#line 1795 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1796 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 337 "lingzhang.y" /* yacc.c:1646  */
+#line 338 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ASSIGNMENT_EXPR", "IDENT INDEX ASSIGN EXPR");
                     if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string((yyvsp[-1].text)),0)))
                         cout << "___Adding " << string((yyvsp[-1].text)) << " to symbol table\n";
                     
                 }
-#line 1806 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1807 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 346 "lingzhang.y" /* yacc.c:1646  */
+#line 347 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("INDEX", " [[ EXPR ]]");
 			    }
-#line 1814 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1815 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 350 "lingzhang.y" /* yacc.c:1646  */
+#line 351 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("INDEX", " epsilon");
                 }
-#line 1822 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1823 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 355 "lingzhang.y" /* yacc.c:1646  */
+#line 356 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("QUIT_EXPR", "QUIT()");
         		   exit(1);
                 }
-#line 1831 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1832 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 362 "lingzhang.y" /* yacc.c:1646  */
+#line 363 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("OUTPUT_EXPR", 
                               "PRINT ( EXPR )");
                 }
-#line 1840 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1841 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 367 "lingzhang.y" /* yacc.c:1646  */
+#line 368 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("OUTPUT_EXPR", 
                               "CAT ( EXPR )");
                 }
-#line 1849 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1850 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 374 "lingzhang.y" /* yacc.c:1646  */
+#line 375 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("INPUT_EXPR", "READ ( VAR )");
                 }
-#line 1857 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1858 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 380 "lingzhang.y" /* yacc.c:1646  */
+#line 381 "lingzhang.y" /* yacc.c:1646  */
     {
                     beginScope();
                 }
-#line 1865 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1866 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 383 "lingzhang.y" /* yacc.c:1646  */
+#line 384 "lingzhang.y" /* yacc.c:1646  */
     {
-                    endScope();
                     printRule("FUNCTION_DEF",
                     "FUNCTION ( PARAM_LIST )"
                     " COMPOUND_EXPR");
+                    endScope();
+
                 }
-#line 1876 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1878 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 392 "lingzhang.y" /* yacc.c:1646  */
+#line 394 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("PARAM_LIST", "PARAMS");
                 }
-#line 1884 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1886 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 396 "lingzhang.y" /* yacc.c:1646  */
+#line 398 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("PARAM_LIST", "NO PARAMS");
                 }
-#line 1892 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1894 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 402 "lingzhang.y" /* yacc.c:1646  */
+#line 404 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("NO_PARAMS", "epsilon");
                 }
-#line 1900 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1902 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 408 "lingzhang.y" /* yacc.c:1646  */
+#line 410 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("PARAMS", "IDENT");
-                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string((yyvsp[0].text)),0)))
-                        cout << "___Adding " << string((yyvsp[0].text)) << " to symbol table\n";
-                    else
+                    cout << "___Adding " << string((yyvsp[0].text)) << " to symbol table\n";
+                    if(!scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string((yyvsp[0].text)),0)))
                     {
-                        printf("Line %d: Multiply Defined Identifier", line_num);
+                        printf("Line %d: Multiply defined identifier", line_num);
                         exit(1);
                     }
                 }
-#line 1915 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1916 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 419 "lingzhang.y" /* yacc.c:1646  */
+#line 420 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("PARAMS", "IDENT, PARAMS");
-
-                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string((yyvsp[-2].text)),0)))
-                        cout << "___Adding " << string((yyvsp[-2].text)) << " to symbol table\n";
-                    else
+                    cout << "___Adding " << string((yyvsp[-2].text)) << " to symbol table\n";
+                    if(!scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string((yyvsp[-2].text)),0)))
                     {
-                        printf("Line %d: Multiply Defined Identifier", line_num);
+                        printf("Line %d: Multiply defined identifier", line_num);
                         exit(1);
                     }
                 }
-#line 1931 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1930 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 433 "lingzhang.y" /* yacc.c:1646  */
+#line 432 "lingzhang.y" /* yacc.c:1646  */
     {
-                    if(findEntryInAnyScope(string((yyvsp[-3].text)))){
+                    if(!findEntryInAnyScope(string((yyvsp[-3].text)))){
                         printf("Line %d: Undefined identifier", line_num);
                         exit(1);
                     }
                     printRule("FUNCTION_CALL", "IDENT"
                               " ( ARG_LIST )");
                 }
-#line 1944 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1943 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 444 "lingzhang.y" /* yacc.c:1646  */
+#line 443 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ARG_LIST", "ARGS");
                 }
-#line 1952 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1951 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 448 "lingzhang.y" /* yacc.c:1646  */
+#line 447 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ARG_LIST", "NO_ARGS");
                 }
-#line 1960 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1959 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 454 "lingzhang.y" /* yacc.c:1646  */
+#line 453 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("NO_ARGS", "epsilon");
                 }
-#line 1968 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1967 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 460 "lingzhang.y" /* yacc.c:1646  */
+#line 459 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ARGS", "EXPR");
                 }
-#line 1976 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1975 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 464 "lingzhang.y" /* yacc.c:1646  */
+#line 463 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ARGS", "EXPR, ARGS");
                 }
-#line 1984 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1983 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 470 "lingzhang.y" /* yacc.c:1646  */
+#line 469 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ADD_OP", "+");
                 }
-#line 1992 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1991 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 474 "lingzhang.y" /* yacc.c:1646  */
+#line 473 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ADD_OP", "-");
                 }
-#line 2000 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 1999 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 478 "lingzhang.y" /* yacc.c:1646  */
+#line 477 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ADD_OP", "|");
                 }
-#line 2008 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2007 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 484 "lingzhang.y" /* yacc.c:1646  */
+#line 483 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP", "*");
                 }
-#line 2016 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2015 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 488 "lingzhang.y" /* yacc.c:1646  */
+#line 487 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP", "/");
                 }
-#line 2024 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2023 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 492 "lingzhang.y" /* yacc.c:1646  */
+#line 491 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP", "&");
                 }
-#line 2032 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2031 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 496 "lingzhang.y" /* yacc.c:1646  */
+#line 495 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP", "\%\%");
                 }
-#line 2040 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2039 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 500 "lingzhang.y" /* yacc.c:1646  */
+#line 499 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("MULT_OP", "^");
                 }
-#line 2048 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2047 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 506 "lingzhang.y" /* yacc.c:1646  */
+#line 505 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("REL_OP", "<");
                 }
-#line 2056 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2055 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 510 "lingzhang.y" /* yacc.c:1646  */
+#line 509 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("REL_OP", ">");
                 }
-#line 2064 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2063 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 79:
-#line 514 "lingzhang.y" /* yacc.c:1646  */
+#line 513 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("REL_OP", "<=");
                 }
-#line 2072 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2071 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 80:
-#line 518 "lingzhang.y" /* yacc.c:1646  */
+#line 517 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("REL_OP", ">=");
                 }
-#line 2080 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2079 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 522 "lingzhang.y" /* yacc.c:1646  */
+#line 521 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("REL_OP", "==");
                 }
-#line 2088 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2087 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 526 "lingzhang.y" /* yacc.c:1646  */
+#line 525 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("REL_OP", "!=");
                 }
-#line 2096 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2095 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 532 "lingzhang.y" /* yacc.c:1646  */
+#line 531 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("VAR", "ENTIRE_VAR");
                 }
-#line 2104 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2103 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 84:
-#line 536 "lingzhang.y" /* yacc.c:1646  */
+#line 535 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("VAR", "SINGLE_ELEMENT");
                 }
-#line 2112 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2111 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 85:
-#line 543 "lingzhang.y" /* yacc.c:1646  */
+#line 542 "lingzhang.y" /* yacc.c:1646  */
     {
                 printRule("SINGLE_ELEMENT", "IDENT"
                               " [[ EXPR ]]");
@@ -2122,11 +2121,11 @@ yyreduce:
                     }
 
                 }
-#line 2126 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2125 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
   case 86:
-#line 555 "lingzhang.y" /* yacc.c:1646  */
+#line 554 "lingzhang.y" /* yacc.c:1646  */
     {
                     printRule("ENTIRE_VAR", "IDENT");
                     if(!findEntryInAnyScope(string((yyvsp[0].text)))){
@@ -2135,11 +2134,11 @@ yyreduce:
                     }                    
                     
                 }
-#line 2139 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2138 "lingzhang.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 2143 "lingzhang.tab.c" /* yacc.c:1646  */
+#line 2142 "lingzhang.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2367,7 +2366,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 565 "lingzhang.y" /* yacc.c:1906  */
+#line 564 "lingzhang.y" /* yacc.c:1906  */
 
 
 #include "lex.yy.c"
@@ -2391,6 +2390,5 @@ int main()
     do {
         yyparse();
     } while (!feof(yyin));
-    endScope();
     return 0;
 }

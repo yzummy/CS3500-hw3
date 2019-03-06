@@ -1,9 +1,14 @@
 /* 
-    minir.y
+    Name: Sungki Ling, Yunchao Zhang
+    Date: 03/06/2019
+    Assignment: hw3
 
-    flex minir.l
-    bison minir.y
-    g++ minir.tab.c -o parser
+
+    lingzhang.y
+
+    flex lingzhang.l
+    bison lingzhang.y
+    g++ lingzhang.tab.c -o parser
     ./parser < inputFileName
     
 */
@@ -98,6 +103,7 @@ extern "C"
 N_START         : N_EXPR
                 {
                     printRule("START", "EXPR");
+                    endScope();
                     printf("\n---- Completed parsing ----\n\n");
                     return 0;
                 }
@@ -381,10 +387,11 @@ N_FUNCTION_DEF  : T_FUNCTION
                     beginScope();
                 } T_LPAREN N_PARAM_LIST T_RPAREN N_COMPOUND_EXPR
                 {
-                    endScope();
                     printRule("FUNCTION_DEF",
                     "FUNCTION ( PARAM_LIST )"
                     " COMPOUND_EXPR");
+                    endScope();
+
                 }
                 ;
 
@@ -407,23 +414,20 @@ N_NO_PARAMS     : /* epsilon */
 N_PARAMS        : T_IDENT
                 {
                     printRule("PARAMS", "IDENT");
-                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
-                        cout << "___Adding " << string($1) << " to symbol table\n";
-                    else
+                    cout << "___Adding " << string($1) << " to symbol table\n";
+                    if(!scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
                     {
-                        printf("Line %d: Multiply Defined Identifier", line_num);
+                        printf("Line %d: Multiply defined identifier", line_num);
                         exit(1);
                     }
                 }
                 | T_IDENT T_COMMA N_PARAMS
                 {
                     printRule("PARAMS", "IDENT, PARAMS");
-
-                    if(scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
-                        cout << "___Adding " << string($1) << " to symbol table\n";
-                    else
+                    cout << "___Adding " << string($1) << " to symbol table\n";
+                    if(!scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0)))
                     {
-                        printf("Line %d: Multiply Defined Identifier", line_num);
+                        printf("Line %d: Multiply defined identifier", line_num);
                         exit(1);
                     }
                 }
@@ -431,7 +435,7 @@ N_PARAMS        : T_IDENT
 
 N_FUNCTION_CALL : T_IDENT T_LPAREN N_ARG_LIST T_RPAREN
                 {
-                    if(findEntryInAnyScope(string($1))){
+                    if(!findEntryInAnyScope(string($1))){
                         printf("Line %d: Undefined identifier", line_num);
                         exit(1);
                     }
@@ -585,6 +589,5 @@ int main()
     do {
         yyparse();
     } while (!feof(yyin));
-    endScope();
     return 0;
 }

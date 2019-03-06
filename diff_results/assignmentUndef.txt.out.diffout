@@ -1,0 +1,11 @@
+
+___Entering new scope...					___Entering new scope...
+
+TOKEN: IDENT 		 LEXEME: mrPeanutButter			TOKEN: IDENT 		 LEXEME: mrPeanutButter
+TOKEN: ASSIGN 		 LEXEME: =				TOKEN: ASSIGN 		 LEXEME: =
+INDEX ->  epsilon						INDEX ->  epsilon
+ASSIGNMENT_EXPR -> IDENT INDEX ASSIGN EXPR			ASSIGNMENT_EXPR -> IDENT INDEX ASSIGN EXPR
+___Adding mrPeanutButter to symbol table			___Adding mrPeanutButter to symbol table
+TOKEN: IDENT 		 LEXEME: bojack				TOKEN: IDENT 		 LEXEME: bojack
+ENTIRE_VAR -> IDENT						ENTIRE_VAR -> IDENT
+Line 2: Undefined identifier					Line 2: Undefined identifier
