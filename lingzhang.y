@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <stack>
 #include "SymbolTable.h"
+#include <iostream>
 
 int line_num = 1;
 stack<SYMBOL_TABLE> scopeStack;
@@ -20,6 +21,8 @@ stack<SYMBOL_TABLE> scopeStack;
 void printTokenInfo(const char* token_type, const char* lexeme);
 
 void printRule(const char *, const char *);
+
+void printAddingSymbol(const char* token);
 
 void beginScope()
 {
@@ -35,17 +38,20 @@ void endScope()
 
 bool findEntryInAnyScope(const string theName)
 {
-	if (scopeStack.empty( )) return(false);
-	bool found = scopeStack.top( ).findEntry(theName);
+	if (scopeStack.empty()) return(false);
+	bool found = scopeStack.top().findEntry(theName);
 	if (found)
-		return(true);
-	else { // check in "next higher" scope
-		SYMBOL_TABLE symbolTable = scopeStack.top( );
-		scopeStack.pop( );
-		found = findEntryInAnyScope(theName);
-		scopeStack.push(symbolTable); // restore the stack
-		return(found);
- }
+        {
+            return(true);
+        }
+	else 
+        {
+            SYMBOL_TABLE symbolTable = scopeStack.top();
+            scopeStack.pop();
+            found = findEntryInAnyScope(theName);
+            scopeStack.push(symbolTable);
+            return(found);
+        }
 }
 
 int yyerror(const char *s) 
@@ -77,7 +83,7 @@ extern "C"
 %token T_MULT T_DIV T_MOD
 %token T_POW T_LT T_LE T_GT T_GE T_EQ T_NE T_NOT T_AND 
 %token T_OR T_ASSIGN T_LIST
-
+%type <text> T_IDENT
 /*
  *  To eliminate ambiguity in if/else
  */
@@ -274,9 +280,10 @@ N_WHILE_EXPR    : T_WHILE T_LPAREN N_EXPR T_RPAREN N_LOOP_EXPR
                 }
                 ;
 
-N_FOR_EXPR      : T_FOR T_LPAREN T_IDENT T_IN N_EXPR T_RPAREN
-                  N_LOOP_EXPR
+N_FOR_EXPR      : T_FOR T_LPAREN T_IDENT T_IN N_EXPR T_RPAREN N_LOOP_EXPR
                 {
+                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($3),0));
+                    cout << "___Adding " << string($3) << " to symbol table\n";
                     printRule("FOR_EXPR", 
                               "FOR ( IDENT IN EXPR ) "
                               "LOOP_EXPR");
@@ -327,11 +334,13 @@ N_CONST_LIST    : N_CONST T_COMMA N_CONST_LIST
                 }
                 ;
 
-N_ASSIGNMENT_EXPR : T_IDENT N_INDEX T_ASSIGN N_EXPR
+N_ASSIGNMENT_EXPR : T_IDENT N_INDEX 
                 {
+                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0));
+                    cout << "___Adding " << string($1) << " to symbol table\n";
                     printRule("ASSIGNMENT_EXPR", 
                               "IDENT INDEX ASSIGN EXPR");
-                }
+                } T_ASSIGN N_EXPR
                 ;
 
 N_INDEX :       T_LBRACKET T_LBRACKET N_EXPR T_RBRACKET T_RBRACKET
@@ -343,7 +352,6 @@ N_INDEX :       T_LBRACKET T_LBRACKET N_EXPR T_RBRACKET T_RBRACKET
                     printRule("INDEX", " epsilon");
                 }
                 ;
-
 N_QUIT_EXPR     : T_QUIT T_LPAREN T_RPAREN
                 {
                     printRule("QUIT_EXPR", "QUIT()");
@@ -397,10 +405,14 @@ N_NO_PARAMS     : /* epsilon */
 
 N_PARAMS        : T_IDENT
                 {
+                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0));
+                    cout << "___Adding " << string($1) << " to symbol table\n";
                     printRule("PARAMS", "IDENT");
                 }
                 | T_IDENT T_COMMA N_PARAMS
                 {
+                    scopeStack.top().addEntry(SYMBOL_TABLE_ENTRY(string($1),0));
+                    cout << "___Adding " << string($1) << " to symbol table\n";
                     printRule("PARAMS", "IDENT, PARAMS");
                 }
                 ;
@@ -539,6 +551,7 @@ void printRule(const char *lhs, const char *rhs)
     printf("%s -> %s\n", lhs, rhs);
     return;
 }
+
 
 int main() 
 {

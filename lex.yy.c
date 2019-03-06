@@ -530,12 +530,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "linzhang.l"
+#line 1 "lingzhang.l"
 /* minir.l
     
     flex minir.l 
 */
-#line 7 "linzhang.l"
+#line 7 "lingzhang.l"
 
 #line 541 "lex.yy.c"
 #line 542 "lex.yy.c"
@@ -755,7 +755,7 @@ YY_DECL
 		}
 
 	{
-#line 25 "linzhang.l"
+#line 25 "lingzhang.l"
 
 
 #line 762 "lex.yy.c"
@@ -817,7 +817,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 27 "linzhang.l"
+#line 27 "lingzhang.l"
 {
     printTokenInfo("LPAREN", yytext);
     return T_LPAREN;
@@ -825,7 +825,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 32 "linzhang.l"
+#line 32 "lingzhang.l"
 {
     printTokenInfo("RPAREN", yytext);
     return T_RPAREN;
@@ -833,7 +833,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 37 "linzhang.l"
+#line 37 "lingzhang.l"
 {
     printTokenInfo("LBRACE", yytext);
     return T_LBRACE;
@@ -841,7 +841,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 42 "linzhang.l"
+#line 42 "lingzhang.l"
 {
     printTokenInfo("RBRACE", yytext);
     return T_RBRACE;
@@ -849,7 +849,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 47 "linzhang.l"
+#line 47 "lingzhang.l"
 {
     printTokenInfo("LBRACKET", yytext);
     return T_LBRACKET;
@@ -857,7 +857,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 52 "linzhang.l"
+#line 52 "lingzhang.l"
 {
     printTokenInfo("RBRACKET", yytext);
     return T_RBRACKET;
@@ -865,7 +865,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 57 "linzhang.l"
+#line 57 "lingzhang.l"
 {
     printTokenInfo("ADD", yytext);
     return T_ADD;
@@ -873,7 +873,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 62 "linzhang.l"
+#line 62 "lingzhang.l"
 {
     printTokenInfo("SUB", yytext);
     return T_SUB;
@@ -881,7 +881,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 67 "linzhang.l"
+#line 67 "lingzhang.l"
 {
     printTokenInfo("MULT", yytext);
     return T_MULT;
@@ -889,7 +889,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 72 "linzhang.l"
+#line 72 "lingzhang.l"
 {
     printTokenInfo("DIV", yytext);
     return T_DIV;
@@ -897,7 +897,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 77 "linzhang.l"
+#line 77 "lingzhang.l"
 {
     printTokenInfo("MOD", yytext);
     return T_MOD;
@@ -905,7 +905,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 82 "linzhang.l"
+#line 82 "lingzhang.l"
 {
     printTokenInfo("POWER", yytext);
     return T_POW;
@@ -913,7 +913,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 87 "linzhang.l"
+#line 87 "lingzhang.l"
 {
     printTokenInfo("LT", yytext);
     return T_LT;
@@ -921,7 +921,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 92 "linzhang.l"
+#line 92 "lingzhang.l"
 {
     printTokenInfo("LE", yytext);
     return T_LE;
@@ -929,7 +929,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 97 "linzhang.l"
+#line 97 "lingzhang.l"
 {
     printTokenInfo("GT", yytext);
     return T_GT;
@@ -937,7 +937,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 102 "linzhang.l"
+#line 102 "lingzhang.l"
 {
     printTokenInfo("GE", yytext);
     return T_GE;
@@ -945,7 +945,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 107 "linzhang.l"
+#line 107 "lingzhang.l"
 {
     printTokenInfo("EQ", yytext);
     return T_EQ;
@@ -953,7 +953,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 112 "linzhang.l"
+#line 112 "lingzhang.l"
 {
     printTokenInfo("NE", yytext);
     return T_NE;
@@ -961,7 +961,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 117 "linzhang.l"
+#line 117 "lingzhang.l"
 {
     printTokenInfo("NOT", yytext);
     return T_NOT;
@@ -969,7 +969,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 122 "linzhang.l"
+#line 122 "lingzhang.l"
 {
     printTokenInfo("AND", yytext);
     return T_AND;
@@ -977,7 +977,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 127 "linzhang.l"
+#line 127 "lingzhang.l"
 {
     printTokenInfo("OR", yytext);
     return T_OR;
@@ -985,7 +985,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 132 "linzhang.l"
+#line 132 "lingzhang.l"
 {
     printTokenInfo("ASSIGN", yytext);
     return T_ASSIGN;
@@ -993,7 +993,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 137 "linzhang.l"
+#line 137 "lingzhang.l"
 {
     printTokenInfo("SEMICOLON", yytext);
     return T_SEMICOLON;
@@ -1001,7 +1001,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 142 "linzhang.l"
+#line 142 "lingzhang.l"
 {
     printTokenInfo("COMMA", yytext);
     return T_COMMA;
@@ -1009,7 +1009,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 147 "linzhang.l"
+#line 147 "lingzhang.l"
 {
     printTokenInfo("TRUE", yytext);
     return T_TRUE;
@@ -1017,7 +1017,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 152 "linzhang.l"
+#line 152 "lingzhang.l"
 {
     printTokenInfo("FALSE", yytext);
     return T_FALSE;
@@ -1025,7 +1025,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 157 "linzhang.l"
+#line 157 "lingzhang.l"
 {
     printTokenInfo("IF", yytext);
     return T_IF;
@@ -1033,7 +1033,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 162 "linzhang.l"
+#line 162 "lingzhang.l"
 {
     printTokenInfo("ELSE", yytext);
     return T_ELSE;
@@ -1041,7 +1041,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 167 "linzhang.l"
+#line 167 "lingzhang.l"
 {
     printTokenInfo("WHILE", yytext);
     return T_WHILE;
@@ -1049,7 +1049,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 172 "linzhang.l"
+#line 172 "lingzhang.l"
 {
     printTokenInfo("FUNCTION", yytext);
     return T_FUNCTION;
@@ -1057,7 +1057,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 177 "linzhang.l"
+#line 177 "lingzhang.l"
 {
     printTokenInfo("FOR", yytext);
     return T_FOR;
@@ -1065,7 +1065,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 182 "linzhang.l"
+#line 182 "lingzhang.l"
 {
     printTokenInfo("IN", yytext);
     return T_IN;
@@ -1073,7 +1073,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 187 "linzhang.l"
+#line 187 "lingzhang.l"
 {
     printTokenInfo("NEXT", yytext);
     return T_NEXT;
@@ -1081,7 +1081,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 192 "linzhang.l"
+#line 192 "lingzhang.l"
 {
     printTokenInfo("BREAK", yytext);
     return T_BREAK;
@@ -1089,7 +1089,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 197 "linzhang.l"
+#line 197 "lingzhang.l"
 {
     printTokenInfo("QUIT", yytext);
     return T_QUIT;
@@ -1097,7 +1097,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 202 "linzhang.l"
+#line 202 "lingzhang.l"
 {
     printTokenInfo("PRINT", yytext);
     return T_PRINT;
@@ -1105,7 +1105,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 207 "linzhang.l"
+#line 207 "lingzhang.l"
 {
     printTokenInfo("CAT", yytext);
     return T_CAT;
@@ -1113,7 +1113,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 212 "linzhang.l"
+#line 212 "lingzhang.l"
 {
     printTokenInfo("READ", yytext);
     return T_READ;
@@ -1121,7 +1121,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 217 "linzhang.l"
+#line 217 "lingzhang.l"
 {
     printTokenInfo("LIST", yytext);
     return T_LIST;
@@ -1129,7 +1129,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 222 "linzhang.l"
+#line 222 "lingzhang.l"
 {
     printTokenInfo("STRCONST", yytext);
     return T_STRCONST;
@@ -1137,7 +1137,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 227 "linzhang.l"
+#line 227 "lingzhang.l"
 {
     printTokenInfo("INTCONST", yytext);
     return T_INTCONST;
@@ -1145,7 +1145,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 232 "linzhang.l"
+#line 232 "lingzhang.l"
 {
     printTokenInfo("FLOATCONST", yytext);
     return T_FLOATCONST;
@@ -1153,8 +1153,9 @@ YY_RULE_SETUP
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 237 "linzhang.l"
+#line 237 "lingzhang.l"
 {
+    yylval.text = strdup(yytext);
     printTokenInfo("IDENT", yytext);
     return T_IDENT;
 }
@@ -1162,24 +1163,24 @@ YY_RULE_SETUP
 case 44:
 /* rule 44 can match eol */
 YY_RULE_SETUP
-#line 242 "linzhang.l"
+#line 243 "lingzhang.l"
 {
     line_num++;
 }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 246 "linzhang.l"
+#line 247 "lingzhang.l"
 {}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 248 "linzhang.l"
+#line 249 "lingzhang.l"
 {}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 250 "linzhang.l"
+#line 251 "lingzhang.l"
 {
     printTokenInfo("UNKNOWN", yytext);
     return T_UNKNOWN;
@@ -1187,10 +1188,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 255 "linzhang.l"
+#line 257 "lingzhang.l"
 ECHO;
 	YY_BREAK
-#line 1194 "lex.yy.c"
+#line 1195 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2195,5 +2196,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 255 "linzhang.l"
+#line 257 "lingzhang.l"
 
